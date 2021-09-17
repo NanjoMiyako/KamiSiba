@@ -1,0 +1,3 @@
+2,C:\hogehoge\img1.jpg
+3,C:\hogehoge\img2.jpg
+7,C:\hogehoge\img3.jpg

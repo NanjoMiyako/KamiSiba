@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>KamiSiba</title>
+  </head>
+  <body>
+ 画像<br>
+<div id = "ImgDiv">
+</div>
+<span id="CurrentText"></span><br>
+<hr>
+再生開始する行番号:
+<input type="text" value = "1" id="startLineNumber" maxlength="5" /><br>
+1行あたりの読み上げ時間(秒):
+<input type="text" value = "5" id="PlaySecondOfOneLine" maxlength="3" /><br>
+<button type="button" id="" style="margin-top:10px;" onclick="Play()">
+再生
+</button><br>
+<hr>
+
+<span id="ImportTextDataFlgSpan"></span><br>
+<span id="ImportLineNumberAndImageDataFlgSpan"></span><br>  
+インポートファイルを選択:<br>
+<input type="file" id="fileOfText"><br>
+<button type="button" id="" style="margin-top:10px;" onclick="ImportTextData()">
+読み上げテキストデータを読み込み
+</button><br>
+<br>
+<input type="file" id="fileOfLineNumberAndImage"><br>
+<button type="button" id="LoadLineNumberAndImageDataBtn" style="margin-top:10px;" onclick="ImportLineNumberAndImageData()">
+行別画像リストデータを読み込み
+</button><br>
+
+
+
+
+<script type="text/javascript" src="KamiSibaJS.js">
+</script>
+
+  </body>
+</html>
