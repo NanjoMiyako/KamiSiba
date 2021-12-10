@@ -1,3 +1,4 @@
-2,C:\hogehoge\img1.jpg
-3,C:\hogehoge\img2.jpg
-7,C:\hogehoge\img3.jpg
+2,https://raw.githubusercontent.com/NanjoMiyako/KamiSiba/main/testData/img1.jpg
+3,https://raw.githubusercontent.com/NanjoMiyako/KamiSiba/main/testData/img2.jpg
+4,ChangeSpeakOneLineTime,10
+7,https://raw.githubusercontent.com/NanjoMiyako/KamiSiba/main/testData/img3.jpg

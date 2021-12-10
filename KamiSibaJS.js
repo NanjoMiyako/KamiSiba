@@ -1,6 +1,8 @@
 var currentSpeech = null;
 var currentIdx = 1
 var SecOfOneLine = 5
+var SecOfSpefyLine;
+var ChangeSpeakOneLineFlg = false;
 
 var g_TextData = []
 var g_LineNumberAndImageData =[]
@@ -23,17 +25,28 @@ function Play2(LineNo){
 	span1.innerHTML = line1
 	speak(line1)
 	if(LineNo+1 < g_TextData.length){
-		setTimeout(function(){Play2((LineNo+1))}, SecOfOneLine * 1000);
+		if(ChangeSpeakOneLineFlg == false){
+			setTimeout(function(){Play2((LineNo+1))}, SecOfOneLine * 1000);
+		}else{
+			ChangeSpeakOneLineFlg = false;
+			setTimeout(function(){Play2((LineNo+1))}, SecOfSpefyLine * 1000);
+		}
 	}
 }
 
 function ChangeImg(LineNo){
 	var num1, imgURL
 	for(var i=0; i<g_LineNumberAndImageData.length; i++){
-		num1 = g_LineNumberAndImageData[i].split(',')[0]
+		cmd1 = g_LineNumberAndImageData[i].split(',')
+		num1 = cmd1[0]
 		if(num1 == (LineNo+1)){
-			imgURL = g_LineNumberAndImageData[i].split(',')[1]
-			DrawImg(imgURL)
+			imgURL = cmd1[1]
+			if(imgURL == "ChangeSpeakOneLineTime"){
+				ChangeSpeakOneLineFlg = true;
+				SecOfSpefyLine = Number(cmd1[2]);
+			}else{
+				DrawImg(imgURL)
+			}
 		}
 	
 	}
